@@ -54,7 +54,6 @@ export class ReminderDetailComponent implements OnInit {
   public canDeactivate(): boolean | Observable<boolean> | Promise<boolean> {
     if (this.reminderDetailsForm.dirty) {
       return confirm('Are you sure you want to discard your changes?');
-
     }
     return true;
   }
