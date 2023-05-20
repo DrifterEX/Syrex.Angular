@@ -1,0 +1,34 @@
+<mat-card>
+    <mat-card-header class="card-header">
+        <mat-card-title class="card-title">Reminder Detail</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="mat-card-content">
+        <form class="reminder-form" [formGroup]="reminderDetailsForm" (ngSubmit)="submitForm()">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+              <input matInput placeholder="Name" formControlName="name">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+              <textarea matInput placeholder="Description" formControlName="description" rows="10"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Reminder Date</mat-label>
+                <input matInput type="datetime-local" formControlName="reminderDate">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Status</mat-label>
+              <mat-select formControlName="status">
+                <mat-option *ngFor="let statusOption of statusOptions" [value]="statusOption.value">
+                  {{statusOption.text}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="actions">
+                <button mat-raised-button color="primary" type="submit">Submit</button>
+                <button mat-raised-button (click)="onBackClick()">Back</button>
+            </div>
+          </form>
+    </mat-card-content>
+</mat-card>
+

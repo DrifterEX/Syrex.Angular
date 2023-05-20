@@ -1,0 +1,21 @@
+.reminder-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5em;
+    width: 50em;
+
+    button {
+        width: 6em;
+    }
+}
+
+mat-form-field {
+    width: 50em;
+}
